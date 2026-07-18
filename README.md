@@ -6,7 +6,7 @@
 
 ## Overview
 
-PING is an independent acoustic research platform developed by **Joshua Jackson**, building directly on acoustic signal processing research conducted at **NASA Ames Research Center** (2025) and **NASA Langley Research Center** (Fall 2026).
+PING is an independent acoustic research platform developed by **Joshua Jackson**, building directly on acoustic signal processing research conducted at **NASA Ames Research Center** (2025).
 
 The project originated from a fundamental limitation identified during the author's NASA Ames internship: a multi-microphone testbed for brushless DC motor fault detection could identify *that* a fault existed, but could not determine *which* motor was faulting on a multi-rotor UAV platform. PING was conceived to answer that question using spatial beamforming and direction-of-arrival estimation.
 
@@ -204,7 +204,7 @@ PING demonstrates that research-grade acoustic array experimentation can be cond
 | Role | Name | Responsibilities |
 |------|------|-----------------|
 | Project Lead / Lead Systems Engineer / Lead Software Developer | Joshua Jackson | Project conception, system architecture, requirements engineering, hardware design, signal processing, beamforming algorithms, experimental design, validation, documentation, primary software development |
-| Software Development Contributor | TBD | Selected software module implementation under project direction |
+| Software Development Contributor | Brian Harris | Selected software module implementation under project direction |
 
 ---
 
@@ -236,7 +236,6 @@ PING was designed to address this gap — building the spatial awareness capabil
 **Joshua Jackson**
 Acoustics & Signal Processing Engineer
 NASA Ames Research Center Intern (2025)
-NASA Langley Research Center Intern (Fall 2026, pending)
 
 [jsj830@outlook.com](mailto:jsj830@outlook.com) | [LinkedIn](https://linkedin.com/in/joshua-jackson-40a46225a) | [GitHub](https://github.com/JoshJacksonAcoustics)
 
