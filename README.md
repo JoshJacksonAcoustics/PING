@@ -63,13 +63,13 @@ The project originated from a fundamental limitation identified during the autho
 
 ## Startup Protocol — CLAP
 
-PING initializes via **CLAP (Channel Level Acquisition Protocol)** — a built-in 8-channel synchronization and sensitivity verification test executed at every startup.
+PING initializes via **CLAP (Channel Level Assessment Protocol)** — a built-in 8-channel synchronization and sensitivity verification test executed at every startup.
 
 ```
 $ python main.py
 
 ==================================================
-PING — Channel Level Acquisition Protocol (CLAP)
+PING — Channel Level Assessment Protocol (CLAP)
 ==================================================
 
 Recording 3s — please clap once near the array
@@ -237,7 +237,7 @@ PING was designed to address this gap — building the spatial awareness capabil
 Acoustics & Signal Processing Engineer
 NASA Ames Research Center Intern (2025)
 
-[jsj830@outlook.com](mailto:jsj830@outlook.com) | [LinkedIn](https://linkedin.com/in/joshua-jackson-40a46225a) | [GitHub](https://github.com/JoshJacksonAcoustics)
+[joshjacksonaudio@gmail.com](mailto:joshjacksonaudio@gmail.com) | [LinkedIn](https://linkedin.com/in/joshua-jackson-40a46225a) | [GitHub](https://github.com/JoshJacksonAcoustics)
 
 ---
 
