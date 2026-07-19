@@ -14,7 +14,9 @@ Joshua Jackson
 
 ## Software Contributors
 Software contributors are individuals whose pull requests have been reviewed and accepted into the project.
+
 Brian Harris
+
 Contributions may include:
 - Selected software module implementation
 - Unit testing assistance
