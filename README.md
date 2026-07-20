@@ -144,7 +144,7 @@ PING is a structured Python package organized into four layers:
 ```
 PING/
 │
-├── oaap/                          # Core package
+├── ping/                          # Core package
 │   ├── hardware/                  # TASCAM interface (Layer 1)
 │   ├── signal_processing/         # Acquisition, filtering, FFT (Layer 2)
 │   ├── beamforming/               # DOA algorithms (Layer 3)

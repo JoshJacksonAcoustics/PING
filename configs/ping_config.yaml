@@ -1,0 +1,46 @@
+# Master configuration for PING
+# Every parameter that could vary between experiments lives here, no matter what
+# Never hardcode these values in library or experiment code (Refer to PRDS 7.5 and CONTRIBUTING.md)
+#
+# This default file targets EXP-001 (Multichannel Synchronization) and EXP-002 (CLAP Sensitivity Calibration): Circular geometry, RING-B aperture.
+
+hardware:
+  device_name: "TASCAM US-16x08"  # Must match a device name returned by sounddevice.query_devices()
+  sample_rate: 44100              # Hz. Minimum per FR-002 in PRDS.
+  bit_depth: 24                   # bits. Required per FR-003 for >=96 dB dynamic range.
+  n_channels: 8                   # Fixed by array design (8-channel platform).
+  phantom_power_v: 48.0           # Volts. Required range 44-52V per FR-005.
+  buffer_size: 1024               # samples. Drives capture latency (-23ms @ 44.1khz, see PRDS Section 5.5).
+
+array:
+  geometry_type: "circular"       # One of: circular, linear, rectangular, spiral, random
+  radius_cm: 8.5                  # RING-B, the primary ring (PRDS Section 6.4).
+  n_mics: 8
+  speed_of_sound_mps: 343.0       # m/s at -20C, used for TDOA/aliasing calculations.
+
+processing:
+  window_type: "hann"             # Matches PRDS Section 5.4 preprocessing step.
+  nfft: 1024                      # FFT size. Matches buffer_size for this default config.
+  overlap: 0.5                    # Fractional overlap between analysis frames, range [0,1).
+  bandpass_low_hz: 200.0          # Lower edge of OBJ-P3 target frequency range.
+  bandpass_high_hz: 2638.0        # RING-B alisasing frequency (PRDS Section 6.4) upper valid limit.
+
+algorithm:
+  primary_algorithm: "music"      # One of: gcc_phat, das, mvdr, music, srp_phat
+  n_sources: 1                    # Single-source assumption for v1.0 (Known Limitation L-002).
+  angular_resolution_deg: 1       # Matches FR-017 heatmap resolution requirement.
+
+visualization:
+  refresh_rate_hz: 2.0            # Minimum per FR-017.
+  colormap: "viridis"
+  show_spectrum: true             # Toggle raw spatial spectrum plot alongside heatmap.
+
+clap:
+  duration_s: 3.0                 # CLAP recording duration (PRDS Section 7.6).
+  threshold_dbfs: -40.0           # Peak detection threshold (PRDS Section 7.6).
+  max_failed_channels: 2          # 1-2 failures => warn and prompt; 3+ => exit (Section 7.6).
+
+logging:
+  save_raw_audio: true
+  save_figures: true
+  output_dir: "results/"
