@@ -7,7 +7,7 @@ Writes structured, reproducible experiment session records.
 Why metadata is a separate JSON file per run, rather than embedding
 everything in data/EXPERIMENT_LOG.md:
 FR-018 requires "data logging with metadata" for every experiment. A
-markdown table is good for a human scanning session history, but a poor
+markdown table is good for scanning session history, but a poor
 place to store a full configuration snapshot - it invites hand-editing,
 which breaks reproducibility (PRDS Section 7.1). Instead, every session
 gets its own timestamped JSON file recording exactly which PINGConfig was
@@ -77,7 +77,7 @@ class ExperimentSession:
 
     Attributes:
         experiment_id: e.g. "EXP-001". Must match PRDS Section 8.1 IDs.
-        title: Short human-readable title, e.g. "Multichannel Synchronization".
+        title: Short readable title, e.g. "Multichannel Synchronization".
         status: One of STATUS_LABELS keys (PLANNED, IN_PROGRESS, PASS, WARN, FAIL).
         timestamp: UTC timestamp of when this session was logged.
         config: The full PINGConfig used for this run, for reproducibility.
@@ -199,7 +199,7 @@ def log_experiment_session(
 
     Args:
         experiment_id: e.g. "EXP-001".
-        title: Short human-readable title matching PRDS Section 8.1.
+        title: Short readable title matching PRDS Section 8.1.
         status: One of "PLANNED", "IN_PROGRESS", "PASS", "WARN", "FAIL".
         config: The PINGConfig used for this run.
         notes: Free-text summary of the outcome.
